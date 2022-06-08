@@ -1,0 +1,12 @@
+.votes-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vote-item{
+    width: 30%;
+    height: max-content;
+    margin: 1%;
+    background-color: white;
+    border-radius: 10px;
+}
