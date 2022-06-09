@@ -1,5 +1,6 @@
 .vote-wrapper{
     padding: 10px 30px;
+    height: max-content;
 }
 .vote-wrapper img {
     width: 100%;

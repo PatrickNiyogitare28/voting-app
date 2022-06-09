@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 import SignUp from './views/auth/signup';
 import Votes from './views/dashboard/votes';
+import UploadCandidacy from './views/dashboard/upload-candidacy';
+import MyVotes from './views/dashboard/my-votes';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
 
        {/* dashboard routes  */}
       <Route path='/votes' element={<Votes />} />
+      <Route path='/upload-candidacy' element={<UploadCandidacy />} />
+      <Route path='/my-votes' element={<MyVotes />} />
      </Routes>
    </Router>
   )

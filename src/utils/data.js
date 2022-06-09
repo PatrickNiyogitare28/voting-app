@@ -9,7 +9,7 @@ export const votes = [
         id: 2,
         name: 'Eric Malaba',
         votes: 7,
-        avatar: 'https://static.frontendmasters.com/assets/teachers/dodds/thumb@2x.jpg'
+        avatar: 'https://media.itkonekt.com/2018/12/Minko_Genchev_400x400-2-300x300.png'
     },
     {
         id: 3,

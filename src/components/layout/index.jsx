@@ -2,11 +2,11 @@ import Navbar from './NavBar'
 import Sidebar from './Sidebar'
 import './styles.css'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, activeRoute }) => {
   return (
     <div className="layout-container">
       <div className="sidebar-container">
-        <Sidebar />
+        <Sidebar activeRoute={activeRoute} />
       </div>
       <div className="main-container">
         <div>

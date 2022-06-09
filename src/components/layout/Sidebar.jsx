@@ -1,7 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './styles.css'
 
-const Sidebar = () => {
+const Sidebar = ({activeRoute='votes'}) => {
+  const navigate = useNavigate();
+  const activeRouteStyle = {
+    backgroundColor: 'rgba(192, 192, 192, 0.284)',
+    borderRadius: '10px',
+    cursor: 'pointer',
+  }
   return (
     <div className="sidebar-container">
       <div>
@@ -10,11 +16,11 @@ const Sidebar = () => {
 
       <div className="nav-menu" style={{marginTop: '10em'}}>
         <ul>
-          <li>Votes</li>
+          <li style={activeRoute === 'votes' ? activeRouteStyle : {cursor:'pointer'}} onClick={() => navigate('/votes')}>Votes</li>
 
-          <li>Upload candidacy</li>
+          <li style={activeRoute === 'upload-candidacy' ? activeRouteStyle : {cursor:'pointer'}} onClick={() => navigate('/upload-candidacy')}>Upload candidacy</li>
 
-          <li>My Votes</li>
+          <li style={activeRoute === 'my-votes' ? activeRouteStyle : {cursor:'pointer'}} onClick={() => navigate('/my-votes')}>My Votes</li>
         </ul>
       </div>
 

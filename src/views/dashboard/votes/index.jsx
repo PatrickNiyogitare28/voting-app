@@ -5,7 +5,7 @@ import './styles.css';
 
 const Votes = () => {
     return (
-        <Layout>
+        <Layout activeRoute='votes'>
             <div>
                 <h1>Peoples' votes</h1>
 
