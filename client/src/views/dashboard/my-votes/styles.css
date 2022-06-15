@@ -1,0 +1,37 @@
+.my-votes-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+}
+.my-votes-container .vote-item{
+  width: 50%;
+  min-height: 50vh;
+}
+
+.actions-container p{
+    margin-top: 2em;
+    font-size: 15px;
+}
+
+.actions-container button{
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px;
+    width: 100px;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+}
+.actions-container button:hover{
+    transform: scale(1.02);
+}
+.actions-container .btns-wrapper{
+ display: flex;
+ margin-top: 2em;
+ justify-content: space-between;
+}
+.actions-container .btns-wrapper button:nth-child(2){
+    background-color: rgba(195, 23, 23, 0.411);
+}

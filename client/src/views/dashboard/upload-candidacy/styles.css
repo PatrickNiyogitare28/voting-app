@@ -1,0 +1,27 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+}
+.container textarea{
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.container button{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: block;
+    width: 200px;
+    border-radius: 10px;
+    border:0px;
+    cursor: pointer;
+}
+.container button:first{
+    margin-top: 20px;
+
+}
+.container button:hover{
+  transform: scale(1.02);
+}
