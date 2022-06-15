@@ -1,11 +1,14 @@
 import 'dotenv/config';
 import express from 'express';
+import cors from 'cors';
 import db from './database';
 import authRoute from './routes/auth.routes';
 import candidacyRoute from './routes/candidacy.routes';
 import usersRoute from './routes/user.routes';
 
 const app = express();
+
+app.use(cors())
 
 app.use(express.json());
 
