@@ -1,11 +1,14 @@
-import 'react'
+import { useState } from 'react'
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import toast, {Toaster} from 'react-hot-toast';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import '../../../styles/common.css'
-import { useEffect } from 'react';
+import { login } from '../../../services/auth';
 
 const Login = () => {
+  const [requestError, setRequestError] = useState(false);
   const errorInputStyle = {
     border: '1px solid red',
   }
@@ -23,20 +26,21 @@ const Login = () => {
   });
   const { handleChange, values, errors, touched, getFieldProps, isValid } = formik;
 
-  const handleSubmit = (e) => {  
+  const handleSubmit = async (e) => {  
     e.preventDefault();
-    if (Object.values(touched).every(e => e === '')) { 
-      alert('Please fill in all fields');
-  }
+    setRequestError(false);
+    const response = await login(values);
+    if(!response?.success) return setRequestError(response?.message || 'Something went wrong');
+    toast.success("Login successful");
 }
-
-
-
 
   return (
     <div className="container">
+      <Toaster />
       <div className='form-container'>
         <form >
+          {requestError && <div className="error-message">{requestError}</div>}
+
           <h1>Login </h1>
           <input placeholder="email" 
            type={'email'}
@@ -58,15 +62,15 @@ const Login = () => {
 
           <button
             type="submit"
-            disabled={!isValid}
-            style={!isValid ? { backgroundColor: '#ccc' } : {}}
+            disabled={!isValid || Object.values(touched).every(e => e === '')}
+            style={((!isValid) || (Object.values(touched).every(e => e === ''))) ? { backgroundColor: '#ccc' } : {}}
             onClick={handleSubmit}
           >LOGIN</button>
         </form>
 
         <Link to='/signup'>
               <p style={{marginTop: '2em'}}>Have no account ? <span>Register</span></p>
-          </Link>
+        </Link>
       </div>
     </div>
   )

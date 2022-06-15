@@ -44,4 +44,12 @@
       color: red;
   }
   
-  
+.error-message{
+    font-size: 12px;
+    margin-top: 2em;
+    background-color: rgba(255, 0, 0, 0.261);
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}

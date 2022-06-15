@@ -15,10 +15,10 @@ export const signup = async (req, res) => {
 export const signin = async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
-    if(!user) return res.status(401).json({success: false, message: "Unauthorized" });
+    if(!user) return res.status(401).json({success: false, message: "Invalid Credentials" });
 
     const isMatch = await comparePassword(password, user.password);
-    if(!isMatch) return res.status(401).json({success: false, message: "Unauthorized" });
+    if(!isMatch) return res.status(401).json({success: false, message: "Invalid Credentials" });
 
     const token = sign({ _id: user._id, email, name: user.name }, process.env.JWT_KEY, { expiresIn: '1h' });
     return res.status(200).json({success: true, data: { token, user: { _id: user._id, name: user.name, email: user.email } } });
