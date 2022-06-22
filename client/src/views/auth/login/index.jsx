@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import toast, {Toaster} from 'react-hot-toast';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -9,6 +9,7 @@ import { login } from '../../../services/auth';
 
 const Login = () => {
   const [requestError, setRequestError] = useState(false);
+  const navigate = useNavigate();
   const errorInputStyle = {
     border: '1px solid red',
   }
@@ -32,6 +33,8 @@ const Login = () => {
     const response = await login(values);
     if(!response?.success) return setRequestError(response?.message || 'Something went wrong');
     toast.success("Login successful");
+    localStorage.setItem('token', response?.data?.token);
+    navigate('/votes');
 }
 
   return (

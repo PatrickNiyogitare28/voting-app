@@ -10,3 +10,17 @@ export const login = async (data) => {
             return e.response.data;
         })
 }
+
+export const getProfile = (token) => {
+    return axios.get(`${API_URL}/auth/profile`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+    .then((res) => {
+        return res.data;
+    })
+    .catch(e => {
+        return e.response.data;
+    })
+}

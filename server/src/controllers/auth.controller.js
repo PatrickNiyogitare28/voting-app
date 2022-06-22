@@ -21,6 +21,10 @@ export const signin = async (req, res) => {
     if(!isMatch) return res.status(401).json({success: false, message: "Invalid Credentials" });
 
     const token = sign({ _id: user._id, email, name: user.name }, process.env.JWT_KEY, { expiresIn: '1h' });
-    return res.status(200).json({success: true, data: { token, user: { _id: user._id, name: user.name, email: user.email } } });
+    return res.status(200).json({success: true, data: { token } });
 
+}
+
+export const getProfile = async (req, res) => {
+    return res.status(200).json({success: true, data: req.user});
 }
