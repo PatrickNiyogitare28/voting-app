@@ -10,6 +10,6 @@ router.get('/:id', getCandidacyById);
 router.get('/user/:id', getCandidacyByUserId);
 router.put('/:id', updateCandidacy);
 router.delete('/:id', deleteCandidacy);
-router.put('/vote/:id', AuthMiddleware, vote);
+router.put('/:id/vote', AuthMiddleware, vote);
 
 export default router;
