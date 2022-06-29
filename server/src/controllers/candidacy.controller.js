@@ -19,8 +19,21 @@ export const uploadCandidacy = async (req, res) => {
 
 export const getAllCandidacies = async (req, res) => { 
     const candidacies = await Candidacy.find();
-    return res.status(200).json({success: true, data: candidacies});
+
+    const candidaciesWithUsers = [];
+
+    candidacies.forEach(async({_id, user, votes, description, avatar}) => {
+
+       const userData =  await User.findById(user);
+
+       candidaciesWithUsers.push({_id,votes, description,avatar, user: userData});
+
+       if(candidaciesWithUsers.length === candidacies.length) {
+           return res.status(200).json({success: true, data: candidaciesWithUsers});
+       }
+    });
 }
+
 
 export const getCandidacyById = async (req, res) => {
     const candidacy = await Candidacy.findOne({_id: req.params.id});
