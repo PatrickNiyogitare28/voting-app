@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getProfile } from '../../services/auth';
-import Navbar from './NavBar'
+import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import './styles.css'
 
