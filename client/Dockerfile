@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-WORKDIR /usr/votting-app
+WORKDIR /app
 
 COPY package.json .
 

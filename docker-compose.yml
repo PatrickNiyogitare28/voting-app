@@ -1,0 +1,40 @@
+version: '1'
+services:
+  client:
+    depends_on: [server]
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes: 
+      - /app/node_modules
+    restart: on-failure
+    container_name: client
+
+  server:
+    depends_on:
+      - mongo
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes: 
+      - /app/node_modules
+    restart: on-failure
+    container_name: server
+    env_file:
+      - ./server/.env
+
+  mongo:
+    image: mongo
+    restart: on-failure
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./db/mongo:/data/db
+    env_file:
+      - ./db/.env ## In any case you need db invironments
