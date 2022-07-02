@@ -68,7 +68,7 @@ const Login = () => {
             disabled={!isValid || Object.values(touched).every(e => e === '')}
             style={((!isValid) || (Object.values(touched).every(e => e === ''))) ? { backgroundColor: '#ccc' } : {}}
             onClick={handleSubmit}
-          >LOGIN</button>ˆˆ∫∫
+          >LOGIN</button>
         </form>
 
         <Link to='/signup'>
