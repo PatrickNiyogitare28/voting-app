@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { registerSchema } from "swaggiffy";
 
 const Schema = mongoose.Schema({
     user: {
@@ -20,5 +21,6 @@ const Schema = mongoose.Schema({
     }
 })
 
+registerSchema('Candidacy',Schema, {orm: 'mongoose'});
 const Candidacy = mongoose.model("Candidacy", Schema);
 export default Candidacy;
