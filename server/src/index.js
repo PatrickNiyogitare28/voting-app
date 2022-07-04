@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import { Swaggiffy } from 'swaggiffy'; // Import Swaggiffy for documentation
 import cors from 'cors';
 import db from './database';
 import authRoute from './routes/auth.routes';
@@ -15,6 +16,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send("Welcome to Voting App API")   
 });
+
+new Swaggiffy().setupExpress(app).swaggiffy(); // Setup Swaggiffy for documentation
 
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/candidacy', candidacyRoute);
