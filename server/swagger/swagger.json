@@ -497,7 +497,7 @@
           ]
         }
       },
-      "/api/v1/users": {
+      "/api/v1/users/{id}": {
         "put": {
           "tags": [
             "Users"
@@ -505,6 +505,12 @@
           "summary": "",
           "description": "",
           "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "type": "string"
+            },
             {
               "in": "body",
               "name": "body",
@@ -539,52 +545,6 @@
             }
           ]
         },
-        "get": {
-          "tags": [
-            "Users"
-          ],
-          "summary": "",
-          "description": "",
-          "parameters": [],
-          "consumes": [
-            "application/json"
-          ],
-          "produces": [
-            "application/json"
-          ],
-          "responses": {
-            "200": {
-              "description": "OK",
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/User"
-                }
-              }
-            },
-            "500": {
-              "description": "Internal Server Error",
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "error": {
-                    "type": "string",
-                    "example": "Internal Server Error"
-                  }
-                }
-              }
-            }
-          },
-          "security": [
-            {
-              "Bearer": [
-                "global"
-              ]
-            }
-          ]
-        }
-      },
-      "/api/v1/users/{id}": {
         "get": {
           "tags": [
             "Users"
@@ -671,6 +631,52 @@
             },
             "500": {
               "description": "Internal Server Error"
+            }
+          },
+          "security": [
+            {
+              "Bearer": [
+                "global"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/v1/users": {
+        "get": {
+          "tags": [
+            "Users"
+          ],
+          "summary": "",
+          "description": "",
+          "parameters": [],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "error": {
+                    "type": "string",
+                    "example": "Internal Server Error"
+                  }
+                }
+              }
             }
           },
           "security": [

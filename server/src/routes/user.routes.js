@@ -4,7 +4,7 @@ import { deleteUser, getAllUsers, getUserByEmail, getUserById, updateUser } from
 
 const router = Router();
 
-router.put('/',updateUser);
+router.put('/:id',updateUser);
 router.get('/', getAllUsers);
 router.get('/:id', getUserById);
 router.get('/email/:email', getUserByEmail);
