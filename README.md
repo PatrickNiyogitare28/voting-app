@@ -43,6 +43,13 @@ $ docker run -p <host-port>:<exposed-container-port> <image-name>
 # docker run 3000:3000 patrickniyo/voting-app-client
 ```
 
+Running the development server
+
+```sh
+$ yarn dev
+# npm run dev
+```
+
 ## Server
 
 The server is built with Nodejs and Express
@@ -60,6 +67,12 @@ $ docker build . -t <docker-id>/<preferred-image-name> -f Dockerfile.dev
 ```sh
 $ docker run -p <host-port>:<exposed-container-port> <image-name>
 # docker run 5000:5000 patrickniyo/voting-app-server
+```
+
+Running the dev server
+
+```sh
+$ yarn start:dev
 ```
 
 ## Nginx
@@ -85,6 +98,9 @@ The tool is [Swaggiffy](https://www.npmjs.com/package/swaggiffy). Get it from [n
 
 [Swaggiffy](https://www.npmjs.com/package/swaggiffy) is a zero config opensource tool for documenting your Node.js Express APIs and is built on top of Swagger. It is designed to be easy to use and simple, with the goal that anyone can read it.
 
+Accessing the documentation
+
+[http://localhost:5000/api-docs](http://localhost:5000/api-docs)
 ## Author
 
 [Patrick Niyogitare](https://patrickniyo.com)

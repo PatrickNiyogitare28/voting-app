@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "NODE_ENV=development nodemon --ignore '*swagger.json' --exec babel-node src/index.js",
-    "start:container": "NODE_ENV=container nodemon --exec babel-node src/index.js",
-    "start": "NODE_ENV=production nodemon --exec babel-node src/index.js"
+    "start:container": "NODE_ENV=container nodemon --ignore '*swagger.json' --exec babel-node src/index.js",
+    "start": "NODE_ENV=production nodemon --ignore '*swagger.json' --exec babel-node src/index.js"
   },
   "dependencies": {
     "argon2": "^0.28.5",

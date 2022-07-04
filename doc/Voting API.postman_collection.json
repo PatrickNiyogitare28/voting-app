@@ -1,0 +1,493 @@
+{
+	"info": {
+		"_postman_id": "45e54ec0-537c-4f99-a570-94e083cf5adc",
+		"name": "Voting API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8548621"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Ntezirizaza Erneste\",\n    \"email\": \"erenest@gmail.com\",\n    \"password\": \"test@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"alice@gmail.com\",\n    \"password\":\"test@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"johndeo10@gmail.com\",\n    \"password\":\"test@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Candidacy",
+			"item": [
+				{
+					"name": "Upload",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmE3NzQzZTI3ZmIwMTNkYjlkMWJkYzMiLCJlbWFpbCI6ImpvaG5kZW80QGdtYWlsLmNvbSIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTY1NTE5MjE1MywiZXhwIjoxNjU1MTk1NzUzfQ.X8posORDCsH_p6aXdUu7axFqOuluA_jFdez9V0ocuYI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "autho",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmE3NzQzZTI3ZmIwMTNkYjlkMWJkYzMiLCJlbWFpbCI6ImpvaG5kZW80QGdtYWlsLmNvbSIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTY1NTE5MjE1MywiZXhwIjoxNjU1MTk1NzUzfQ.X8posORDCsH_p6aXdUu7axFqOuluA_jFdez9V0ocuYI",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"avatar\":\"https://techcrunch.com/wp-content/uploads/2021/11/thomas-82-1.jpg\",\n    \"description\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/candidacy/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"candidacy",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. \",\n    \"avatar\":\"https://techcrunch.com/wp-content/uploads/2021/11/thomas-82-1.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/candidacy/62a82d46c899298fced54bb7",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"candidacy",
+								"62a82d46c899298fced54bb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmE3NzQzZTI3ZmIwMTNkYjlkMWJkYzMiLCJlbWFpbCI6ImpvaG5kZW80QGdtYWlsLmNvbSIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTY1NTE5MjE1MywiZXhwIjoxNjU1MTk1NzUzfQ.X8posORDCsH_p6aXdUu7axFqOuluA_jFdez9V0ocuYI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. \",\n    \"avatar\":\"https://techcrunch.com/wp-content/uploads/2021/11/thomas-82-1.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/candidacy/62b55b2538aac0f934335c2c/vote",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"candidacy",
+								"62b55b2538aac0f934335c2c",
+								"vote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/candidacy",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"candidacy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/candidacy/62a82d46c899298fced54bb7",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"candidacy",
+								"62a82d46c899298fced54bb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/candidacy/62a82d46c899298fced54bb7",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"candidacy",
+								"62a82d46c899298fced54bb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One by User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/candidacy/user/62a7743e27fb013db9d1bdc3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"candidacy",
+								"user",
+								"62a7743e27fb013db9d1bdc3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmMyYTlhMzJkZjMzZDA0Y2Q2YzAxY2IiLCJlbWFpbCI6ImFsaWNlQGdtYWlsLmNvbSIsIm5hbWUiOiJNdXRvbmkgQWxpY2UiLCJpYXQiOjE2NTY5MjQ1ODMsImV4cCI6MTY1NjkyODE4M30.xFxSV3n_n6G7-4jIomjNqoBL9RIMmP1sStziSAAYqjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmMyYTlhMzJkZjMzZDA0Y2Q2YzAxY2IiLCJlbWFpbCI6ImFsaWNlQGdtYWlsLmNvbSIsIm5hbWUiOiJNdXRvbmkgQWxpY2UiLCJpYXQiOjE2NTY5MjQ1ODMsImV4cCI6MTY1NjkyODE4M30.xFxSV3n_n6G7-4jIomjNqoBL9RIMmP1sStziSAAYqjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"JohnDoe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/users/62a76c6968f925aea42e5953",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"62a76c6968f925aea42e5953"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmMyYTlhMzJkZjMzZDA0Y2Q2YzAxY2IiLCJlbWFpbCI6ImFsaWNlQGdtYWlsLmNvbSIsIm5hbWUiOiJNdXRvbmkgQWxpY2UiLCJpYXQiOjE2NTY5MjQ1ODMsImV4cCI6MTY1NjkyODE4M30.xFxSV3n_n6G7-4jIomjNqoBL9RIMmP1sStziSAAYqjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"JohnDoe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/users/62a76c6968f925aea42e5953",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"62a76c6968f925aea42e5953"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmMyYTlhMzJkZjMzZDA0Y2Q2YzAxY2IiLCJlbWFpbCI6ImFsaWNlQGdtYWlsLmNvbSIsIm5hbWUiOiJNdXRvbmkgQWxpY2UiLCJpYXQiOjE2NTY5MjQ1ODMsImV4cCI6MTY1NjkyODE4M30.xFxSV3n_n6G7-4jIomjNqoBL9RIMmP1sStziSAAYqjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/users/62a76c6968f925aea42e5953",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"62a76c6968f925aea42e5953"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmMyYTlhMzJkZjMzZDA0Y2Q2YzAxY2IiLCJlbWFpbCI6ImFsaWNlQGdtYWlsLmNvbSIsIm5hbWUiOiJNdXRvbmkgQWxpY2UiLCJpYXQiOjE2NTY5MjQ1ODMsImV4cCI6MTY1NjkyODE4M30.xFxSV3n_n6G7-4jIomjNqoBL9RIMmP1sStziSAAYqjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/users/email/johndoe@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"email",
+								"johndoe@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
