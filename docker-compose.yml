@@ -3,8 +3,8 @@ services:
   client:
     depends_on: [server]
     build:
-      context: ./client
-      dockerfile: Dockerfile
+      context: ./client 
+      dockerfile: Dockerfile # Dockerfile is optional, if not specified it will be automatically generated from the context
     ports:
       - "3000:3000"
     volumes: 
