@@ -104,3 +104,8 @@ Accessing the documentation
 ## Author
 
 [Patrick Niyogitare](https://patrickniyo.com)
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
